@@ -1,25 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="18dp"
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/edt_text_distancia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:id="@+id/edt_txt_distancia"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/edt_txt_distancia_hint" />
 
     <TextView
+        android:id="@+id/txt_view_total_quilometros"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_view_total_de_quilometros_text"
+        android:textAlignment="center" />
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/edt_txt_preco"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="32dp"
+        android:hint="@string/edt_txt_preco_hint"
+        android:inputType="text"
+        android:lineSpacingExtra="16sp" />
 
+    <TextView
+        android:id="@+id/txt_view_preco"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/edt_txt_preco_por_litro_text"
+        android:textAlignment="center" />
 
+    <EditText
+        android:id="@+id/edt_txt_autonomia"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="32dp"
+        android:hint="@string/edt_txt_autonomia_hint"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/txt_view_autonomia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_view_autonomia_text"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/txt_view_gasto_total"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/txt_view_gasto_total_text"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/txt_view_gasto_valor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_view_gasto_valor_text"
+        android:textAlignment="center"
+        android:textColor="@color/txt_view_gasto_valor_color"
+        android:textSize="38sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_calcular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/btn_calcular_backgroudn"
+        android:padding="16dp"
+        android:text="@string/btn_calcular_text"
+        android:textAlignment="center"
+        android:textSize="20sp" />
 
 
 </LinearLayout>
