@@ -22,13 +22,41 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding.btnCalcular.setOnClickListener(this)
 
     }
+
     override fun onClick(view: View) {
         if (view.id == R.id.btn_calcular) {
             calcular()
         }
     }
 
+    private fun isValid(): Boolean {
+        return (binding.edtTxtDistancia.text.toString() != ""
+                && binding.edtTxtPreco.text.toString() != ""
+                && binding.edtTxtAutonomia.text.toString() != ""
+                && binding.edtTxtAutonomia.text.toString().toFloat() != 0f
+
+                )
+    }
+
     private fun calcular() {
-        Toast.makeText(this, "Fui cliclado", Toast.LENGTH_SHORT).show();
+        if (binding.edtTxtDistancia.text.toString().isEmpty() ) {
+            binding.edtTxtDistancia.setError("Não pode ser nulo")
+        }
+
+        if (isValid()) {
+            val distance = binding.edtTxtDistancia.text.toString().toFloat()
+            val preco = binding.edtTxtPreco.text.toString().toFloat()
+            val autonomia = binding.edtTxtAutonomia.text.toString().toFloat()
+
+
+            val valorTotal = (distance * preco) / autonomia
+
+            binding.txtViewGastoValor.text = "R$ ${"%.2f".format(valorTotal)}"
+        } else {
+            Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
+        }
+
+
+
     }
 }
